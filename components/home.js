@@ -19,9 +19,9 @@ const Home = ({ dispatch, theState }) => {
   return (
     <PageContainer>
       <Room1 />
-      <Room room={'Room 2'} name={'box2'} handleClick={() => dispatch(check("box1"))}/>
-      <Room room={'Room 3'} name={'box3'} handleClick={() => dispatch(check())}/>
-      <Room room={'Room 4'} name={'box4'} onClick={() => dispatch(check())}/>
+      <Room room={'Room 2'} name={'box2'} handleClick={() => dispatch(check("box2"))}/>
+      <Room room={'Room 3'} name={'box3'} handleClick={() => dispatch(check("box3"))}/>
+      <Room room={'Room 4'} name={'box4'} handleClick={() => dispatch(check("box4"))}/>
       <ReduxTest onClick={() => dispatch(sampleAction("test"))} >
         Redux Test
       </ReduxTest>

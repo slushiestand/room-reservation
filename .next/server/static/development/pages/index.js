@@ -235,7 +235,7 @@ var Home = function Home(_ref) {
     room: 'Room 2',
     name: 'box2',
     handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box1"));
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box2"));
     },
     __source: {
       fileName: _jsxFileName,
@@ -246,7 +246,7 @@ var Home = function Home(_ref) {
     room: 'Room 3',
     name: 'box3',
     handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])());
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box3"));
     },
     __source: {
       fileName: _jsxFileName,
@@ -256,8 +256,8 @@ var Home = function Home(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
     room: 'Room 4',
     name: 'box4',
-    onClick: function onClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])());
+    handleClick: function handleClick() {
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box4"));
     },
     __source: {
       fileName: _jsxFileName,
