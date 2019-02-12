@@ -15,12 +15,12 @@ const ReduxTest = styled.button`
 
 const Home = ({ dispatch, theState }) => {
   console.log(theState);
-  console.log(theState.checked)
+
   return (
     <PageContainer>
       <Room1 />
-      <Room room={'Room 2'} name={'box2'} onClick={() => dispatch(check())}/>
-      <Room room={'Room 3'} name={'box3'} onClick={() => dispatch(check())}/>
+      <Room room={'Room 2'} name={'box2'} handleClick={() => dispatch(check("box1"))}/>
+      <Room room={'Room 3'} name={'box3'} handleClick={() => dispatch(check())}/>
       <Room room={'Room 4'} name={'box4'} onClick={() => dispatch(check())}/>
       <ReduxTest onClick={() => dispatch(sampleAction("test"))} >
         Redux Test
@@ -30,7 +30,7 @@ const Home = ({ dispatch, theState }) => {
 }
 
 const mapStateToProps = (state) => ({
-  theState : state.check
+  theState : state
 })
 
 

@@ -1,7 +1,8 @@
 export const CHECK_BOX = "CHECK_BOX"
 
-export const check = () => {
+export function check(id) {
     return {
       type: "CHECK_BOX",
+      id
     }
   } 

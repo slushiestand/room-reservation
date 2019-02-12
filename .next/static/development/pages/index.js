@@ -12,11 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHECK_BOX", function() { return CHECK_BOX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check", function() { return check; });
 var CHECK_BOX = "CHECK_BOX";
-var check = function check() {
+function check(id) {
   return {
-    type: "CHECK_BOX"
+    type: "CHECK_BOX",
+    id: id
   };
-};
+}
 
 /***/ }),
 
@@ -32,10 +33,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAMPLE_ACTION", function() { return SAMPLE_ACTION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sampleAction", function() { return sampleAction; });
 var SAMPLE_ACTION = "SAMPLE_ACTION";
-function sampleAction(text) {
+function sampleAction(id) {
   return {
     type: "SAMPLE_ACTION",
-    text: text
+    id: id
   };
 }
 
@@ -122,7 +123,6 @@ var Home = function Home(_ref) {
   var dispatch = _ref.dispatch,
       theState = _ref.theState;
   console.log(theState);
-  console.log(theState.checked);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PageContainer, {
     __source: {
       fileName: _jsxFileName,
@@ -138,8 +138,8 @@ var Home = function Home(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
     room: 'Room 2',
     name: 'box2',
-    onClick: function onClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])());
+    handleClick: function handleClick() {
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box1"));
     },
     __source: {
       fileName: _jsxFileName,
@@ -149,7 +149,7 @@ var Home = function Home(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
     room: 'Room 3',
     name: 'box3',
-    onClick: function onClick() {
+    handleClick: function handleClick() {
       return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])());
     },
     __source: {
@@ -182,7 +182,7 @@ var Home = function Home(_ref) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    theState: state.check
+    theState: state
   };
 };
 
