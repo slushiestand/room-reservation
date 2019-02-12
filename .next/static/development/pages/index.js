@@ -263,7 +263,7 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room, [{
     key: "render",
     value: function render() {
-      console.warn(this.props.name);
+      //console.warn(this.props.name)
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
@@ -584,7 +584,7 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SelectBox, [{
     key: "render",
     value: function render() {
-      console.warn(this.state.selectValue);
+      //console.warn(this.state.selectValue)
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("select", {
         value: this.state.selectValue,
         onChange: this.handleChange,

@@ -67,7 +67,7 @@ const Container = styled.div`
   export default class Room extends Component {
     
     render() {
-      console.warn(this.props.name)
+      //console.warn(this.props.name)
       return (
           <Container>
             <CheckBox name={this.props.name} handleClick={this.props.handleClick}/>

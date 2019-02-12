@@ -12,7 +12,7 @@ export default class SelectBox extends Component {
         })
     }
     render() {
-        console.warn(this.state.selectValue)
+        //console.warn(this.state.selectValue)
       return (
               <select 
               value={this.state.selectValue} 
