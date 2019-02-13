@@ -1,14 +1,30 @@
 const initialState = {
-    check: false
+    check2: false,
+    check3: false,
+    check4: false,
   }
  export const check = (state = initialState, action) => {
       switch (action.type){
-          case 'CHECK_BOX':
+          case 'CHECK_BOX2':
           console.warn("action done")
               return {
                   ...state,
-                  check: !state.check,
-              }        
+                  check2: !state.check2,
+              }
+           case 'CHECK_BOX3':
+                return {
+                   ...state,
+                   check3: !state.check3,
+                   check2: !state.check2
+               }
+            case 'CHECK_BOX4':
+            return {
+                ...state,
+                check4: !state.check4,
+                check3: !state.check3,
+                check2: !state.check2,
+            
+            }          
           default:
               return state
       }

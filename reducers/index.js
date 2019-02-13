@@ -4,7 +4,7 @@ import check from './check'
 
 const appReducer = combineReducers({
   login,
-  check
+  check,
 
 })
 

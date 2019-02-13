@@ -1,8 +1,22 @@
-export const CHECK_BOX = "CHECK_BOX"
+export const CHECK_BOX2 = "CHECK_BOX"
 
-export function check(id) {
+export function check2(id) {
     return {
-      type: "CHECK_BOX",
+      type: "CHECK_BOX2",
+      id
+    }
+  } 
+
+  export function check3(id) {
+    return {
+      type: "CHECK_BOX3",
+      id
+    }
+  } 
+
+  export function check4(id) {
+    return {
+      type: "CHECK_BOX4",
       id
     }
   } 

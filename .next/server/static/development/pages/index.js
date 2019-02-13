@@ -97,17 +97,31 @@ module.exports =
 /*!**************************!*\
   !*** ./actions/check.js ***!
   \**************************/
-/*! exports provided: CHECK_BOX, check */
+/*! exports provided: CHECK_BOX2, check2, check3, check4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHECK_BOX", function() { return CHECK_BOX; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check", function() { return check; });
-var CHECK_BOX = "CHECK_BOX";
-function check(id) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHECK_BOX2", function() { return CHECK_BOX2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check2", function() { return check2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check3", function() { return check3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check4", function() { return check4; });
+var CHECK_BOX2 = "CHECK_BOX";
+function check2(id) {
   return {
-    type: "CHECK_BOX",
+    type: "CHECK_BOX2",
+    id: id
+  };
+}
+function check3(id) {
+  return {
+    type: "CHECK_BOX3",
+    id: id
+  };
+}
+function check4(id) {
+  return {
+    type: "CHECK_BOX4",
     id: id
   };
 }
@@ -235,7 +249,7 @@ var Home = function Home(_ref) {
     room: 'Room 2',
     name: 'box2',
     handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box2"));
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check2"])("box2"));
     },
     __source: {
       fileName: _jsxFileName,
@@ -246,7 +260,7 @@ var Home = function Home(_ref) {
     room: 'Room 3',
     name: 'box3',
     handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box3"));
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check3"])("box3"));
     },
     __source: {
       fileName: _jsxFileName,
@@ -257,7 +271,7 @@ var Home = function Home(_ref) {
     room: 'Room 4',
     name: 'box4',
     handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check"])("box4"));
+      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check4"])("box4"));
     },
     __source: {
       fileName: _jsxFileName,
