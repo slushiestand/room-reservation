@@ -9,7 +9,7 @@ const Input = styled.input`
 
 const CheckBox = (props) => (
   <div>
-    <Input id="input" type="checkbox" onClick={props.handleClick}/>
+    <Input id="input" type="checkbox" checked={props.checked} onChange={props.handleChange}/>
   </div>
 );
 

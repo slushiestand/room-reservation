@@ -65,12 +65,18 @@ const Container = styled.div`
   `;
 
   export default class Room extends Component {
-    
+    handleChange(e) {
+      e.preventDefault()
+    }
     render() {
       //console.warn(this.props.name)
       return (
           <Container>
-            <CheckBox name={this.props.name} handleClick={this.props.handleClick}/>
+            <CheckBox 
+              name={this.props.name} 
+              checked={this.props.checked} 
+              handleChange={this.props.handleClick}
+            />
             <Title>  {this.props.room} </Title>
             <RoomsContainer>
               <AdultsSection>

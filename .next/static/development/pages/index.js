@@ -1,10 +1,10 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
-/***/ "./actions/check.js":
+/***/ "./actions/index.js":
 /*!**************************!*\
-  !*** ./actions/check.js ***!
+  !*** ./actions/index.js ***!
   \**************************/
-/*! exports provided: CHECK_BOX2, check2, check3, check4 */
+/*! exports provided: CHECK_BOX2, check2, check3, check4, uncheck */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check2", function() { return check2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check3", function() { return check3; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check4", function() { return check4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck", function() { return uncheck; });
 var CHECK_BOX2 = "CHECK_BOX";
 function check2(id) {
   return {
@@ -32,24 +33,9 @@ function check4(id) {
     id: id
   };
 }
-
-/***/ }),
-
-/***/ "./actions/index.js":
-/*!**************************!*\
-  !*** ./actions/index.js ***!
-  \**************************/
-/*! exports provided: SAMPLE_ACTION, sampleAction */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAMPLE_ACTION", function() { return SAMPLE_ACTION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sampleAction", function() { return sampleAction; });
-var SAMPLE_ACTION = "SAMPLE_ACTION";
-function sampleAction(id) {
+function uncheck(id) {
   return {
-    type: "SAMPLE_ACTION",
+    type: "UNCHECK_BOX",
     id: id
   };
 }
@@ -86,7 +72,8 @@ var CheckBox = function CheckBox(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     id: "input",
     type: "checkbox",
-    onClick: props.handleClick,
+    checked: props.checked,
+    onChange: props.handleChange,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
@@ -108,14 +95,27 @@ var CheckBox = function CheckBox(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _room1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./room1 */ "./components/room1.js");
-/* harmony import */ var _room__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./room */ "./components/room.js");
-/* harmony import */ var _actions_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../actions/index */ "./actions/index.js");
-/* harmony import */ var _actions_check__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../actions/check */ "./actions/check.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _room1__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./room1 */ "./components/room1.js");
+/* harmony import */ var _room__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./room */ "./components/room.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../actions */ "./actions/index.js");
+
+
+
+
+
+
+
 var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components\\home.js";
 
 
@@ -123,76 +123,91 @@ var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components
 
 
 
-
-var PageContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var PageContainer = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].div.withConfig({
   displayName: "home__PageContainer",
   componentId: "sc-9487q3-0"
 })(["display:flex;flex-direction:row;"]);
-var ReduxTest = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
-  displayName: "home__ReduxTest",
-  componentId: "sc-9487q3-1"
-})([""]);
 
-var Home = function Home(_ref) {
-  var dispatch = _ref.dispatch,
-      theState = _ref.theState;
-  console.log(theState);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PageContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    room: 'Room 2',
-    name: 'box2',
-    handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check2"])("box2"));
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    room: 'Room 3',
-    name: 'box3',
-    handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check3"])("box3"));
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    room: 'Room 4',
-    name: 'box4',
-    handleClick: function handleClick() {
-      return dispatch(Object(_actions_check__WEBPACK_IMPORTED_MODULE_6__["check4"])("box4"));
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ReduxTest, {
-    onClick: function onClick() {
-      return dispatch(Object(_actions_index__WEBPACK_IMPORTED_MODULE_5__["sampleAction"])("test"));
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, "Redux Test"));
-};
+var Home =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Home, _Component);
+
+  function Home() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Home);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Home)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleClickBox2", function () {
+      if (_this.props.theState.check.check3 === true) {
+        _this.props.uncheckBoxes;
+      } else _this.props.checkBox2;
+    });
+
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
+    key: "render",
+    value: function render() {
+      console.log(this.props.theState.check);
+      var theState = this.props.theState;
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        room: 'Room 2',
+        name: 'box2',
+        handleClick: this.handleClickBox2,
+        checked: theState.check.check2,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        room: 'Room 3',
+        name: 'box3',
+        handleClick: this.props.checkBox3,
+        checked: theState.check.check3,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        room: 'Room 4',
+        name: 'box4',
+        handleClick: this.props.checkBox4,
+        checked: theState.check.check4,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return Home;
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
@@ -200,7 +215,24 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Home));
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    uncheckBoxes: function uncheckBoxes() {
+      dispatch();
+    },
+    checkBox2: function checkBox2() {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check2"])("box2"));
+    },
+    checkBox3: function checkBox3() {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check3"])("box3"));
+    },
+    checkBox4: function checkBox4() {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check4"])("box4"));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, mapDispatchToProps)(Home));
 
 /***/ }),
 
@@ -275,93 +307,99 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      e.preventDefault();
+    }
+  }, {
     key: "render",
     value: function render() {
       //console.warn(this.props.name)
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 74
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_8__["default"], {
         name: this.props.name,
-        handleClick: this.props.handleClick,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, "  ", this.props.room, " "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
+        checked: this.props.checked,
+        handleChange: this.props.handleClick,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 75
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 80
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: this
-      }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+      }, "  ", this.props.room, " "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 81
         },
         __self: this
-      }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 82
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 84
+        },
+        __self: this
+      }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
         },
         __self: this
       }, "Children"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 99
         },
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 103
         },
         __self: this
       }))));
