@@ -4,7 +4,7 @@
 /*!**************************!*\
   !*** ./actions/index.js ***!
   \**************************/
-/*! exports provided: CHECK_BOX2, check2, check3, check4, uncheck */
+/*! exports provided: CHECK_BOX2, check2, check3, check4, uncheck, uncheck4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check3", function() { return check3; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check4", function() { return check4; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck", function() { return uncheck; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck4", function() { return uncheck4; });
 var CHECK_BOX2 = "CHECK_BOX";
 function check2(id) {
   return {
@@ -36,6 +37,12 @@ function check4(id) {
 function uncheck(id) {
   return {
     type: "UNCHECK_BOX",
+    id: id
+  };
+}
+function uncheck4(id) {
+  return {
+    type: "UNCHECK_BOX4",
     id: id
   };
 }
@@ -147,9 +154,15 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Home)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleClickBox2", function () {
-      if (_this.props.theState.check.check3 === true) {
-        _this.props.uncheckBoxes;
-      } else _this.props.checkBox2;
+      if (_this.props.theState.check.check3 == true || _this.props.theState.check.check4 == true) {
+        _this.props.uncheckBoxes();
+      } else _this.props.checkBox2();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleClickBox3", function () {
+      if (_this.props.theState.check.check4 == true) {
+        _this.props.uncheckBox4();
+      } else _this.props.checkBox3();
     });
 
     return _this;
@@ -158,18 +171,18 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
     key: "render",
     value: function render() {
-      console.log(this.props.theState.check);
+      console.log(this.props.theState.check.check3);
       var theState = this.props.theState;
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 36
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -179,17 +192,17 @@ function (_Component) {
         checked: theState.check.check2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 37
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
         room: 'Room 3',
         name: 'box3',
-        handleClick: this.props.checkBox3,
+        handleClick: this.handleClickBox3,
         checked: theState.check.check3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 38
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -199,7 +212,7 @@ function (_Component) {
         checked: theState.check.check4,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 39
         },
         __self: this
       }));
@@ -218,7 +231,10 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     uncheckBoxes: function uncheckBoxes() {
-      dispatch();
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["uncheck"])());
+    },
+    uncheckBox4: function uncheckBox4() {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["uncheck4"])());
     },
     checkBox2: function checkBox2() {
       dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check2"])("box2"));

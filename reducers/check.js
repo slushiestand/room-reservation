@@ -32,7 +32,14 @@ const initialState = {
                 check3: false,
                 check4: false,
             
-            }          
+            }
+            case 'UNCHECK_BOX4':
+            return {
+                ...state,
+                check3: !state.check3,
+                check4: false,
+            
+            }            
           default:
               return state
       }

@@ -13129,6 +13129,12 @@ var check = function check() {
         check4: false
       });
 
+    case 'UNCHECK_BOX4':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        check3: !state.check3,
+        check4: false
+      });
+
     default:
       return state;
   }

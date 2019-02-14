@@ -27,3 +27,10 @@ export function check2(id) {
       id
     }
   } 
+
+  export function uncheck4(id) {
+    return {
+      type: "UNCHECK_BOX4",
+      id
+    }
+  } 
