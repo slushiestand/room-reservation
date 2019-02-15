@@ -6,6 +6,9 @@ const Input = styled.input`
   {
     width: 15px;
     height: 15px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 
 
   }
