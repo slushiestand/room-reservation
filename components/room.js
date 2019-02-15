@@ -84,7 +84,7 @@ const Container = styled.div`
             />
             <Title>  {this.props.room} </Title>
             </TitleContainer>
-            <RoomsContainer >
+            <RoomsContainer checked={this.props.checked}>
               <AdultsSection checked={this.props.checked}>
                 <UnorderedList>
                   <ListItem>
@@ -106,7 +106,7 @@ const Container = styled.div`
                     (0-17)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked}/>
+                <SelectBox checked={this.props.checked} children={true}/>
               </ChildrenSection>
             </RoomsContainer>
   

@@ -11,7 +11,7 @@ export default class SelectBox extends Component {
         })
     }
     render() {
-        //console.warn(this.state.selectValue)
+
       return (
               <select 
               value={this.state.selectValue} 
@@ -20,9 +20,7 @@ export default class SelectBox extends Component {
               >
                 <option value="0">0</option>
                 <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                {this.props.children === true ? <option value="2">2</option> : null}
               </select>
       );
     }

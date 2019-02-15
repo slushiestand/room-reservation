@@ -100,7 +100,7 @@ const Container = styled.div`
                     (0-17)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox />
+                <SelectBox children={true}/>
               </ChildrenSection>
             </RoomsContainer>
   

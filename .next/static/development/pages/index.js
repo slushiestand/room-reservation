@@ -123,6 +123,10 @@ var PageContainer = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].di
   displayName: "home__PageContainer",
   componentId: "sc-9487q3-0"
 })(["display:flex;flex-direction:row;"]);
+var Submit = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].button.withConfig({
+  displayName: "home__Submit",
+  componentId: "sc-9487q3-1"
+})(["background-color:#C0C0C0;height:30px;width:60px;margin-left:25px;margin-top:25px;"]);
 
 var Home =
 /*#__PURE__*/
@@ -158,6 +162,10 @@ function (_Component) {
       } else _this.props.checkBox3();
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleSubmit", function () {
+      window.location.reload();
+    });
+
     return _this;
   }
 
@@ -165,17 +173,23 @@ function (_Component) {
     key: "render",
     value: function render() {
       var theState = this.props.theState;
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 44
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
         room: 'Room 1',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 46
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -184,7 +198,7 @@ function (_Component) {
         checked: theState.check2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 47
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -193,7 +207,7 @@ function (_Component) {
         checked: theState.check3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 48
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -202,10 +216,17 @@ function (_Component) {
         checked: theState.check4,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 49
         },
         __self: this
-      }));
+      })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Submit, {
+        onClick: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, " Submit "));
     }
   }]);
 
@@ -361,6 +382,7 @@ function (_Component) {
         },
         __self: this
       }, "  ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
+        checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87
@@ -425,6 +447,7 @@ function (_Component) {
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
         checked: this.props.checked,
+        children: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 109
@@ -595,6 +618,7 @@ function (_Component) {
         },
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        children: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 103
@@ -674,7 +698,6 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SelectBox, [{
     key: "render",
     value: function render() {
-      //console.warn(this.state.selectValue)
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("select", {
         value: this.state.selectValue,
         onChange: this.handleChange,
@@ -698,28 +721,14 @@ function (_Component) {
           lineNumber: 22
         },
         __self: this
-      }, "1"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
+      }, "1"), this.props.children === true ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: "2",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23
         },
         __self: this
-      }, "2"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
-        value: "3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, "3"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
-        value: "4",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, "4"));
+      }, "2") : null);
     }
   }]);
 

@@ -9,6 +9,13 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: row;
 `
+const Submit = styled.button`
+  background-color: #C0C0C0;
+  height: 30px;
+  width: 60px;
+  margin-left: 25px;
+  margin-top: 25px;
+`
 
 class Home extends Component {
   handleClickBox2 = () => {
@@ -28,10 +35,13 @@ class Home extends Component {
     }
     else this.props.checkBox3()
   }
-
+  handleSubmit = () => {
+    window.location.reload()
+  }
 render() {
   const theState = this.props.theState
   return (
+    <div>
     <PageContainer>
       <Room1 room={'Room 1'}/>
       <Room room={'Room 2'} handleClick={this.handleClickBox2} checked={theState.check2}/>
@@ -39,6 +49,9 @@ render() {
       <Room room={'Room 4'} handleClick={this.props.checkBox4} checked={theState.check4}/>
 
     </PageContainer>
+    <Submit onClick={this.handleSubmit}> Submit </Submit>
+    </div>
+
 
   )
 }
