@@ -25,7 +25,7 @@ const initialState = {
                     check2: !state.check4,
                 
                 }
-            case 'UNCHECK_BOX':
+            case 'UNCHECK_BOXES34':
             return {
                 ...state,
                 check2: !state.check2,

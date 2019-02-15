@@ -12,46 +12,46 @@ const PageContainer = styled.div`
 
 class Home extends Component {
   handleClickBox2 = () => {
-    if(this.props.theState.check.check3 == true || this.props.theState.check.check4 == true) {
+    //check if Room 3 or Room 4 is checked, if they are, a click on Room 2 should uncheck Rooms 3 and 4, if not
+    //a click should check Room 2
+    if(this.props.theState.check3 === true || this.props.theState.check4 === true) {
       this.props.uncheckBoxes()
     }
     else this.props.checkBox2()
   }
 
   handleClickBox3 = () => {
-    if(this.props.theState.check.check4 == true ) {
+    //check if Room 4 is checked, if yes, a click on Room 3 should uncheck Room 4, if not
+    //a click should check Room 3
+    if(this.props.theState.check4 == true ) {
       this.props.uncheckBox4()
     }
     else this.props.checkBox3()
   }
 
 render() {
-  console.log(this.props.theState.check.check3);
   const theState = this.props.theState
- 
-
-
   return (
     <PageContainer>
-      <Room1 />
-      <Room room={'Room 2'} name={'box2'} handleClick={this.handleClickBox2} checked={theState.check.check2}/>
-      <Room room={'Room 3'} name={'box3'} handleClick={this.handleClickBox3} checked={theState.check.check3}/>
-      <Room room={'Room 4'} name={'box4'} handleClick={this.props.checkBox4} checked={theState.check.check4}/>
+      <Room1 room={'Room 1'}/>
+      <Room room={'Room 2'} handleClick={this.handleClickBox2} checked={theState.check2}/>
+      <Room room={'Room 3'} handleClick={this.handleClickBox3} checked={theState.check3}/>
+      <Room room={'Room 4'} handleClick={this.props.checkBox4} checked={theState.check4}/>
     </PageContainer>
   )
 }
 }
 
 const mapStateToProps = (state) => ({
-  theState : state
+  theState : state.check
 })
 
 const mapDispatchToProps = (dispatch) => ({
   uncheckBoxes: () => {dispatch(uncheck())},
   uncheckBox4: () => {dispatch(uncheck4())},
-  checkBox2: () => {dispatch(check2("box2"))},
-  checkBox3: () => {dispatch(check3("box3"))},
-  checkBox4: () => {dispatch(check4("box4"))}
+  checkBox2: () => {dispatch(check2())},
+  checkBox3: () => {dispatch(check3())},
+  checkBox4: () => {dispatch(check4())}
 })
 
 

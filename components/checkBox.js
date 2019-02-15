@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Input = styled.input`
-  &:checked {
- 
+  {
+    width: 15px;
+    height: 15px;
+
+
   }
 `;
 
+
+
 const CheckBox = (props) => (
-  <div>
-    <Input id="input" type="checkbox" checked={props.checked} onChange={props.handleChange}/>
-  </div>
+
+        <Input id="input" type="checkbox" checked={props.checked} onChange={props.handleChange} />
+
+    
 );
 
 export default CheckBox

@@ -16,34 +16,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck", function() { return uncheck; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck4", function() { return uncheck4; });
 var CHECK_BOX2 = "CHECK_BOX";
-function check2(id) {
+function check2() {
   return {
-    type: "CHECK_BOX2",
-    id: id
+    type: "CHECK_BOX2"
   };
 }
-function check3(id) {
+function check3() {
   return {
-    type: "CHECK_BOX3",
-    id: id
+    type: "CHECK_BOX3"
   };
 }
-function check4(id) {
+function check4() {
   return {
-    type: "CHECK_BOX4",
-    id: id
+    type: "CHECK_BOX4"
   };
 }
-function uncheck(id) {
+function uncheck() {
   return {
-    type: "UNCHECK_BOX",
-    id: id
+    type: "UNCHECK_BOXES34"
   };
 }
-function uncheck4(id) {
+function uncheck4() {
   return {
-    type: "UNCHECK_BOX4",
-    id: id
+    type: "UNCHECK_BOX4"
   };
 }
 
@@ -67,26 +62,20 @@ var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components
 var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.withConfig({
   displayName: "checkBox__Input",
   componentId: "s13tej-0"
-})(["&:checked{}"]);
+})(["{width:15px;height:15px;}"]);
 
 var CheckBox = function CheckBox(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
     id: "input",
     type: "checkbox",
     checked: props.checked,
     onChange: props.handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 18
     },
     __self: this
-  }));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CheckBox);
@@ -154,13 +143,17 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Home)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleClickBox2", function () {
-      if (_this.props.theState.check.check3 == true || _this.props.theState.check.check4 == true) {
+      //check if Room 3 or Room 4 is checked, if they are, a click on Room 2 should uncheck Rooms 3 and 4, if not
+      //a click should check Room 2
+      if (_this.props.theState.check3 === true || _this.props.theState.check4 === true) {
         _this.props.uncheckBoxes();
       } else _this.props.checkBox2();
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleClickBox3", function () {
-      if (_this.props.theState.check.check4 == true) {
+      //check if Room 4 is checked, if yes, a click on Room 3 should uncheck Room 4, if not
+      //a click should check Room 3
+      if (_this.props.theState.check4 == true) {
         _this.props.uncheckBox4();
       } else _this.props.checkBox3();
     });
@@ -171,7 +164,6 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
     key: "render",
     value: function render() {
-      console.log(this.props.theState.check.check3);
       var theState = this.props.theState;
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
         __source: {
@@ -180,6 +172,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        room: 'Room 1',
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
@@ -187,9 +180,8 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
         room: 'Room 2',
-        name: 'box2',
         handleClick: this.handleClickBox2,
-        checked: theState.check.check2,
+        checked: theState.check2,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
@@ -197,9 +189,8 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
         room: 'Room 3',
-        name: 'box3',
         handleClick: this.handleClickBox3,
-        checked: theState.check.check3,
+        checked: theState.check3,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
@@ -207,9 +198,8 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
         room: 'Room 4',
-        name: 'box4',
         handleClick: this.props.checkBox4,
-        checked: theState.check.check4,
+        checked: theState.check4,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 39
@@ -224,7 +214,7 @@ function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    theState: state
+    theState: state.check
   };
 };
 
@@ -237,13 +227,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["uncheck4"])());
     },
     checkBox2: function checkBox2() {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check2"])("box2"));
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check2"])());
     },
     checkBox3: function checkBox3() {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check3"])("box3"));
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check3"])());
     },
     checkBox4: function checkBox4() {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check4"])("box4"));
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check4"])());
     }
   };
 };
@@ -285,30 +275,40 @@ var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "room__Container",
   componentId: "bs834f-0"
-})(["display:flex;flex-direction:column;margin-left:20px;background-color:#E7E7E7;font-family:Arial;padding:5px;border-radius:10px;"]);
+})(["display:flex;flex-direction:column;margin-left:20px;background-color:#E7E7E7;font-family:Arial;padding:5px;border-radius:10px;height:100px;"]);
+var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room__TitleContainer",
+  componentId: "bs834f-1"
+})(["display:flex;flex-direction:row;align-items:center;margin-bottom:5px;margin-top:5px;"]);
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "room__Title",
-  componentId: "bs834f-1"
-})(["color:#292929;text-align:left;margin-left:10px;font-weight:bold;line-height:25px;"]);
+  componentId: "bs834f-2"
+})(["color:#292929;text-align:left;font-weight:bold;font-size:15px;"]);
 var RoomsContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "room__RoomsContainer",
-  componentId: "bs834f-2"
-})(["display:flex;flex-direction:row;justify-content:space-between;align-items:center;background-color:#FFFFFF;"]);
+  componentId: "bs834f-3"
+})(["display:flex;flex-direction:row;align-items:center;justify-content:center;background-color:", ";border-radius:10px;padding:2px;"], function (props) {
+  return props.checked == true ? '#FFFFFF' : '#E7E7E7';
+});
 var AdultsSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "room__AdultsSection",
-  componentId: "bs834f-3"
-})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:1em;padding:0.3em;padding-bottom:2em;"]);
+  componentId: "bs834f-4"
+})(["background-color:", ";flex-direction:column;text-align:center;font-size:12px;padding:10px 5px 10px 10px;"], function (props) {
+  return props.checked == true ? '#FFFFFF' : '#E7E7E7';
+});
 var ChildrenSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
   displayName: "room__ChildrenSection",
-  componentId: "bs834f-4"
-})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:1em;padding:0.3em;padding-bottom:2em;"]);
+  componentId: "bs834f-5"
+})(["background-color:", ";flex-direction:column;text-align:center;font-size:12px;padding:10px 10px 10px 5px;"], function (props) {
+  return props.checked == true ? '#FFFFFF' : '#E7E7E7';
+});
 var UnorderedList = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].ul.withConfig({
   displayName: "room__UnorderedList",
-  componentId: "bs834f-5"
+  componentId: "bs834f-6"
 })(["margin:0;padding:0;"]);
 var ListItem = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].li.withConfig({
   displayName: "room__ListItem",
-  componentId: "bs834f-6"
+  componentId: "bs834f-7"
 })(["list-style-type:none;"]);
 
 var Room =
@@ -323,36 +323,209 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      e.preventDefault();
-    }
-  }, {
     key: "render",
     value: function render() {
-      //console.warn(this.props.name)
+      console.warn(this.props.checked);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 79
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        name: this.props.name,
-        checked: this.props.checked,
-        handleChange: this.props.handleClick,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 75
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(TitleContainer, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 80
         },
         __self: this
-      }, "  ", this.props.room, " "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        checked: this.props.checked,
+        handleChange: this.props.handleClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
+        },
+        __self: this
+      }, "  ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
+        checked: this.props.checked,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
+        checked: this.props.checked,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
+        checked: this.props.checked,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, "Children"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }))));
+    }
+  }]);
+
+  return Room;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./components/room1.js":
+/*!*****************************!*\
+  !*** ./components/room1.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Room1; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _selectBox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectBox */ "./components/selectBox.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components\\room1.js";
+
+
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__Container",
+  componentId: "sc-18rcrgv-0"
+})(["display:flex;flex-direction:column;margin-left:20px;background-color:#E7E7E7;font-family:Arial;padding:5px;border-radius:10px;height:100px;"]);
+var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__TitleContainer",
+  componentId: "sc-18rcrgv-1"
+})(["display:flex;flex-direction:row;align-items:center;margin-bottom:5px;margin-top:5px;line-height:21px;"]);
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__Title",
+  componentId: "sc-18rcrgv-2"
+})(["color:#292929;text-align:left;margin-left:5px;font-weight:bold;font-size:15px;"]);
+var RoomsContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__RoomsContainer",
+  componentId: "sc-18rcrgv-3"
+})(["display:flex;flex-direction:row;align-items:center;justify-content:center;background-color:#FFFFFF;border-radius:10px;padding:2px;"]);
+var AdultsSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__AdultsSection",
+  componentId: "sc-18rcrgv-4"
+})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:12px;padding:10px 5px 10px 10px;"]);
+var ChildrenSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
+  displayName: "room1__ChildrenSection",
+  componentId: "sc-18rcrgv-5"
+})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:12px;padding:10px 10px 10px 5px;"]);
+var UnorderedList = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].ul.withConfig({
+  displayName: "room1__UnorderedList",
+  componentId: "sc-18rcrgv-6"
+})(["margin:0;padding:0;"]);
+var ListItem = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].li.withConfig({
+  displayName: "room1__ListItem",
+  componentId: "sc-18rcrgv-7"
+})(["list-style-type:none;"]);
+
+var Room1 =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Room1, _Component);
+
+  function Room1() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Room1);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Room1).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room1, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(TitleContainer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        },
+        __self: this
+      }, " ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 81
@@ -416,166 +589,6 @@ function (_Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 103
-        },
-        __self: this
-      }))));
-    }
-  }]);
-
-  return Room;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-
-
-
-/***/ }),
-
-/***/ "./components/room1.js":
-/*!*****************************!*\
-  !*** ./components/room1.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Room1; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _selectBox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./selectBox */ "./components/selectBox.js");
-
-
-
-
-
-var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components\\room1.js";
-
-
-
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
-  displayName: "room1__Container",
-  componentId: "sc-18rcrgv-0"
-})(["display:flex;flex-direction:column;margin-left:20px;background-color:#E7E7E7;font-family:Arial;padding:5px;border-radius:10px;"]);
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
-  displayName: "room1__Title",
-  componentId: "sc-18rcrgv-1"
-})(["color:#292929;text-align:left;margin-left:10px;font-weight:bold;line-height:25px;"]);
-var RoomsContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
-  displayName: "room1__RoomsContainer",
-  componentId: "sc-18rcrgv-2"
-})(["display:flex;flex-direction:row;justify-content:space-between;align-items:center;background-color:#FFFFFF;"]);
-var AdultsSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
-  displayName: "room1__AdultsSection",
-  componentId: "sc-18rcrgv-3"
-})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:1em;padding:0.3em;padding-bottom:2em;"]);
-var ChildrenSection = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div.withConfig({
-  displayName: "room1__ChildrenSection",
-  componentId: "sc-18rcrgv-4"
-})(["background-color:#FFFFFF;flex-direction:column;text-align:center;font-size:1em;padding:0.3em;padding-bottom:2em;"]);
-var UnorderedList = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].ul.withConfig({
-  displayName: "room1__UnorderedList",
-  componentId: "sc-18rcrgv-5"
-})(["margin:0;padding:0;"]);
-var ListItem = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].li.withConfig({
-  displayName: "room1__ListItem",
-  componentId: "sc-18rcrgv-6"
-})(["list-style-type:none;"]);
-
-var Room1 =
-/*#__PURE__*/
-function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Room1, _Component);
-
-  function Room1() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Room1);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Room1).apply(this, arguments));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room1, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, " Room 1 "), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 75
-        },
-        __self: this
-      }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: this
-      }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        },
-        __self: this
-      }, "Children"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 90
-        },
-        __self: this
-      }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94
         },
         __self: this
       }))));

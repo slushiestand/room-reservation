@@ -11,47 +11,54 @@ const Container = styled.div`
     font-family: Arial;
     padding: 5px;
     border-radius: 10px;
-    
+    height: 100px;
+  `;
+
+  const TitleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
 
   `;
   
   const Title = styled.div`
     color: #292929;
     text-align: left;
-    margin-left: 10px;
     font-weight: bold;
-    line-height: 25px;
+    font-size: 15px;
 
   `;
 
   const RoomsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FFFFFF;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.checked == true ? '#FFFFFF' : '#E7E7E7'};
+    border-radius: 10px;
+    padding: 2px;
 
 
 `;
   
   const AdultsSection = styled.div`
-  background-color: #FFFFFF;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  padding-bottom: 2em;
+    background-color: ${props => props.checked == true ? '#FFFFFF' : '#E7E7E7'};
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 5px 10px 10px;
+
 
   `;
 
   const ChildrenSection = styled.div`
-  background-color: #FFFFFF;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  padding-bottom: 2em;
+    background-color: ${props => props.checked == true ? '#FFFFFF' : '#E7E7E7'};
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 10px 10px 5px;
 
 `;
 
@@ -65,21 +72,18 @@ const Container = styled.div`
   `;
 
   export default class Room extends Component {
-    handleChange(e) {
-      e.preventDefault()
-    }
     render() {
-      //console.warn(this.props.name)
       return (
           <Container>
-            <CheckBox 
-              name={this.props.name} 
+            <TitleContainer>
+            <CheckBox  
               checked={this.props.checked} 
               handleChange={this.props.handleClick}
             />
             <Title>  {this.props.room} </Title>
-            <RoomsContainer>
-              <AdultsSection>
+            </TitleContainer>
+            <RoomsContainer checked={this.props.checked}>
+              <AdultsSection checked={this.props.checked}>
                 <UnorderedList>
                   <ListItem>
                   Adults
@@ -91,7 +95,7 @@ const Container = styled.div`
                 <SelectBox />
               </AdultsSection>
               
-              <ChildrenSection>
+              <ChildrenSection checked={this.props.checked}>
               <UnorderedList>
                   <ListItem>
                     Children

@@ -3,33 +3,42 @@ import styled from 'styled-components'
 import SelectBox from './selectBox'
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    background-color: #E7E7E7;
-    font-family: Arial;
-    padding: 5px;
-    border-radius: 10px;
-    
-
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  background-color: #E7E7E7;
+  font-family: Arial;
+  padding: 5px;
+  border-radius: 10px;
+  height: 100px;
   `;
-  
+
+  const TitleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    line-height: 21px;
+`;
+
   const Title = styled.div`
-    color: #292929;
-    text-align: left;
-    margin-left: 10px;
-    font-weight: bold;
-    line-height: 25px;
+  color: #292929;
+  text-align: left;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 15px;
 
   `;
 
   const RoomsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   background-color: #FFFFFF;
-
+  border-radius: 10px;
+  padding: 2px;
 
 
 `;
@@ -38,9 +47,9 @@ const Container = styled.div`
   background-color: #FFFFFF;
   flex-direction: column;
   text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  padding-bottom: 2em;
+  font-size: 12px;
+  padding: 10px 5px 10px 10px;
+
 
   `;
 
@@ -48,10 +57,8 @@ const Container = styled.div`
   background-color: #FFFFFF;
   flex-direction: column;
   text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  padding-bottom: 2em;
-
+  font-size: 12px;
+  padding: 10px 10px 10px 5px;
 `;
 
   const UnorderedList = styled.ul`
@@ -68,7 +75,9 @@ const Container = styled.div`
     render() {
       return (
           <Container >
-            <Title> Room 1 </Title>
+            <TitleContainer>
+              <Title> {this.props.room} </Title>
+            </TitleContainer>
             <RoomsContainer>
               <AdultsSection>
                 <UnorderedList>

@@ -1829,7 +1829,7 @@ var check = function check() {
         check2: !state.check4
       });
 
-    case 'UNCHECK_BOX':
+    case 'UNCHECK_BOXES34':
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         check2: !state.check2,
         check3: false,
