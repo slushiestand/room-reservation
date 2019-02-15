@@ -422,17 +422,16 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Room, [{
     key: "render",
     value: function render() {
-      console.warn(this.props.checked);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(TitleContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 78
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -440,82 +439,82 @@ function (_Component) {
         handleChange: this.props.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 79
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 83
         },
         __self: this
       }, "  ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 88
         },
         __self: this
       }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 91
         },
         __self: this
       }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 95
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 98
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 100
         },
         __self: this
       }, "Children"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 103
         },
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 107
         },
         __self: this
       }))));
