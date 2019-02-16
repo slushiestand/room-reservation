@@ -9,9 +9,10 @@ export default class SelectBox extends Component {
         this.setState({
             selectValue: e.target.value
         })
+
+
     }
     render() {
-
       return (
               <select 
               value={this.state.selectValue} 

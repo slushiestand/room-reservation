@@ -5,6 +5,7 @@ import CheckBox from './checkBox'
 import StyledBox from './styledBox'
 
 
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -74,7 +75,9 @@ const Container = styled.div`
   `;
 
   export default class Room extends Component {
+
     render() {
+
       return (
           <Container checked={this.props.checked}>
             <TitleContainer >
@@ -94,7 +97,7 @@ const Container = styled.div`
                   (18+)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked}/>
+                <SelectBox checked={this.props.checked} />
               </AdultsSection>
               
               <ChildrenSection checked={this.props.checked}>
@@ -115,3 +118,4 @@ const Container = styled.div`
       );
     }
   }
+

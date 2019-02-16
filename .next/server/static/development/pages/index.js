@@ -97,18 +97,18 @@ module.exports =
 /*!**************************!*\
   !*** ./actions/index.js ***!
   \**************************/
-/*! exports provided: CHECK_BOX2, check2, check3, check4, uncheck, uncheck4 */
+/*! exports provided: check2, check3, check4, uncheck, uncheck4, adults, children */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHECK_BOX2", function() { return CHECK_BOX2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check2", function() { return check2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check3", function() { return check3; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "check4", function() { return check4; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck", function() { return uncheck; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck4", function() { return uncheck4; });
-var CHECK_BOX2 = "CHECK_BOX";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adults", function() { return adults; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "children", function() { return children; });
 function check2() {
   return {
     type: "CHECK_BOX2"
@@ -132,6 +132,18 @@ function uncheck() {
 function uncheck4() {
   return {
     type: "UNCHECK_BOX4"
+  };
+}
+function adults(selectValue) {
+  return {
+    type: "NUMBER_ADULTS",
+    selectValue: selectValue
+  };
+}
+function children(selectValue) {
+  return {
+    type: "NUMBER_CHILDREN",
+    selectValue: selectValue
   };
 }
 
@@ -215,13 +227,17 @@ var _jsxFileName = "C:\\Projects\\room-reservation\\room-reservation\\components
 
 
 
-var PageContainer = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.div.withConfig({
+var PageContainer = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.form.withConfig({
   displayName: "home__PageContainer",
   componentId: "sc-9487q3-0"
+})(["display:flex;flex-direction:column;"]);
+var RoomContainer = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.div.withConfig({
+  displayName: "home__RoomContainer",
+  componentId: "sc-9487q3-1"
 })(["display:flex;flex-direction:row;"]);
 var Submit = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.button.withConfig({
   displayName: "home__Submit",
-  componentId: "sc-9487q3-1"
+  componentId: "sc-9487q3-2"
 })(["background-color:#C0C0C0;height:30px;width:60px;margin-left:25px;margin-top:25px;"]);
 
 var Home =
@@ -258,9 +274,7 @@ function (_Component) {
       } else _this.props.checkBox3();
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleSubmit", function () {
-      window.location.reload();
-    });
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleSubmit", function (selectValue) {});
 
     return _this;
   }
@@ -272,20 +286,26 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 53
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(RoomContainer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
         room: 'Room 1',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 55
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -294,7 +314,7 @@ function (_Component) {
         checked: theState.check2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 56
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -303,7 +323,7 @@ function (_Component) {
         checked: theState.check3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 62
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -312,17 +332,17 @@ function (_Component) {
         checked: theState.check4,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 68
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Submit, {
         onClick: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 75
         },
         __self: this
-      }, " Submit "));
+      }, " Submit ")));
     }
   }]);
 
@@ -353,7 +373,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check4"])());
     }
   };
-};
+}; //set initial state of app by pull from reducer like suggested here: https://stackoverflow.com/questions/52479422/keep-redux-form-values-after-page-reload-without-submit-form
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, mapDispatchToProps)(Home));
 
@@ -455,13 +476,13 @@ function (_Component) {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 82
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(TitleContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -469,77 +490,77 @@ function (_Component) {
         handleChange: this.props.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 84
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 88
         },
         __self: this
       }, "  ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RoomsContainer, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 90
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(AdultsSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 92
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 93
         },
         __self: this
       }, "Adults"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 96
         },
         __self: this
       }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 100
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ChildrenSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 103
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 104
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 105
         },
         __self: this
       }, "Children"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 108
         },
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -547,7 +568,7 @@ function (_Component) {
         children: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 112
         },
         __self: this
       }))));
@@ -802,28 +823,28 @@ function (_Component) {
         disabled: this.props.checked == false,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }, "0"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: "1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 23
         },
         __self: this
       }, "1"), this.props.children === true ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: "2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, "2") : null);

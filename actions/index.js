@@ -1,5 +1,3 @@
-export const CHECK_BOX2 = "CHECK_BOX"
-
 export function check2() {
     return {
       type: "CHECK_BOX2"
@@ -27,5 +25,19 @@ export function check2() {
   export function uncheck4() {
     return {
       type: "UNCHECK_BOX4"
+    }
+  } 
+
+  export function adults(selectValue) {
+    return {
+      type: "NUMBER_ADULTS",
+      selectValue
+    }
+  } 
+
+  export function children(selectValue) {
+    return {
+      type: "NUMBER_CHILDREN",
+      selectValue
     }
   } 
