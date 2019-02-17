@@ -10,14 +10,12 @@ function occupancyOfRoom(room = ''){
                 console.warn('adultsreducer')
                 return {
                     ...state,
-                    adults: action.selectValue,
-                    room: action.room
+                    adults: action.selectValue
                 }
             case `NUMBER_CHILDREN_${room}`:
                 return {
                     ...state,
-                    children: action.selectValue,
-                    room: action.room
+                    children: action.selectValue
                 }                
             
           default:

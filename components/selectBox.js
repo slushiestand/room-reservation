@@ -1,22 +1,18 @@
 import React, { Component } from 'react'
 
 export default class SelectBox extends Component {
-    state = {
-        selectValue: 0
-    }
 
     handleChange = (e) => {
-        this.setState({
-            selectValue: e.target.value
-        })
-        this.props.onChange(this.state.selectValue)
-
-
+        const selectValue = e.target.value
+        if (this.props.children === true) {
+            return this.props.onChangeChildren(selectValue)
+        } else return this.props.onChangeAdults(selectValue)
     }
+
+    
     render() {
       return (
               <select 
-              value={this.state.selectValue} 
               onChange={this.handleChange} 
               disabled={this.props.checked == false}
               >

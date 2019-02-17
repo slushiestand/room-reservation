@@ -44,15 +44,13 @@ function uncheck4() {
 function adults(selectValue, room) {
   return {
     type: "NUMBER_ADULTS_".concat(room),
-    selectValue: selectValue,
-    room: room
+    selectValue: selectValue
   };
 }
 function children(selectValue, room) {
   return {
-    type: "NUMBER_ADULTS_".concat(room),
-    selectValue: selectValue,
-    room: room
+    type: "NUMBER_CHILDREN_".concat(room),
+    selectValue: selectValue
   };
 }
 
@@ -386,16 +384,14 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Room)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleChangeAdult", function (selectValue) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleChangeAdults", function (selectValue) {
       var room = _this.props.room;
-      console.warn(selectValue, room);
 
       _this.props.adultsInRoom(selectValue, room);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleChangeChildren", function (selectValue) {
       var room = _this.props.room;
-      console.warn(selectValue, room);
 
       _this.props.childrenInRoom(selectValue, room);
     });
@@ -410,13 +406,13 @@ function (_Component) {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 92
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(TitleContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 93
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_checkBox__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -424,87 +420,88 @@ function (_Component) {
         handleChange: this.props.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 94
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 98
         },
         __self: this
       }, "  Room ", this.props.room, " ")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(RoomsContainer, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(AdultsSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 103
         },
         __self: this
       }, "Adults"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 106
         },
         __self: this
       }, "(18+)")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_10__["default"], {
         checked: this.props.checked,
-        onChange: this.handleChangeAdult,
+        onChangeAdults: this.handleChangeAdults,
+        children: false,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 110
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(ChildrenSection, {
         checked: this.props.checked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 113
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(UnorderedList, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 114
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 115
         },
         __self: this
       }, "Children"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(ListItem, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 118
         },
         __self: this
       }, "(0-17)")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_selectBox__WEBPACK_IMPORTED_MODULE_10__["default"], {
         checked: this.props.checked,
-        onChange: this.handleChangeChildren,
+        onChangeChildren: this.handleChangeChildren,
         children: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 122
         },
         __self: this
       }))));
@@ -792,16 +789,12 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(SelectBox)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "state", {
-      selectValue: 0
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleChange", function (e) {
-      _this.setState({
-        selectValue: e.target.value
-      });
+      var selectValue = e.target.value;
 
-      _this.props.onChange(_this.state.selectValue);
+      if (_this.props.children === true) {
+        return _this.props.onChangeChildren(selectValue);
+      } else return _this.props.onChangeAdults(selectValue);
     });
 
     return _this;
@@ -811,33 +804,32 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("select", {
-        value: this.state.selectValue,
         onChange: this.handleChange,
         disabled: this.props.checked == false,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 15
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 19
         },
         __self: this
       }, "0"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 20
         },
         __self: this
       }, "1"), this.props.children === true ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
         value: 2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 21
         },
         __self: this
       }, "2") : null);
@@ -3587,12 +3579,12 @@ function index (resultFn, isEqual) {
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_01ce18af005e042d77da ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -3793,12 +3785,12 @@ process.umask = function() { return 0; };
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_01ce18af005e042d77da ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -4427,23 +4419,23 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_01ce18af005e042d77da ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_01ce18af005e042d77da ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -6058,12 +6050,12 @@ module.exports = hoistNonReactStatics;
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_01ce18af005e042d77da ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -9402,12 +9394,12 @@ function symbolObservablePonyfill(root) {
 
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!******************************************************************************************************!*\
-  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_01ce18af005e042d77da ***!
   \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/webpack/buildin/global.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/webpack/buildin/global.js");
 
 /***/ }),
 
@@ -9520,14 +9512,14 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ "dll-reference dll_088ad163e0fe8b57417b":
+/***/ "dll-reference dll_01ce18af005e042d77da":
 /*!*******************************************!*\
-  !*** external "dll_088ad163e0fe8b57417b" ***!
+  !*** external "dll_01ce18af005e042d77da" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_088ad163e0fe8b57417b;
+module.exports = dll_01ce18af005e042d77da;
 
 /***/ })
 

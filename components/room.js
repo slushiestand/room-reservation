@@ -76,20 +76,18 @@ const Container = styled.div`
   `;
 
   class Room extends Component {
-    handleChangeAdult = (selectValue) => {
+
+    handleChangeAdults = (selectValue) => {
       const room = this.props.room
-      console.warn(selectValue, room)
       this.props.adultsInRoom(selectValue, room)
     }
 
     handleChangeChildren = (selectValue) => {
       const room = this.props.room
-      console.warn(selectValue, room)
       this.props.childrenInRoom(selectValue, room)
     }
 
     render() {
-
       return (
           <Container checked={this.props.checked}>
             <TitleContainer >
@@ -109,7 +107,7 @@ const Container = styled.div`
                   (18+)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked} onChange={this.handleChangeAdult}/>
+                <SelectBox checked={this.props.checked} onChangeAdults={this.handleChangeAdults} children={false}/>
               </AdultsSection>
               
               <ChildrenSection checked={this.props.checked}>
@@ -121,7 +119,7 @@ const Container = styled.div`
                     (0-17)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked} onChange={this.handleChangeChildren} children={true}/>
+                <SelectBox checked={this.props.checked} onChangeChildren={this.handleChangeChildren} children={true}/>
               </ChildrenSection>
             </RoomsContainer>
   

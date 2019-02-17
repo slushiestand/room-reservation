@@ -31,15 +31,13 @@ export function check2() {
   export function adults(selectValue, room) {
     return {
       type: `NUMBER_ADULTS_${room}`,
-      selectValue, 
-      room
+      selectValue
     }
   } 
 
   export function children(selectValue, room) {
     return {
-      type: `NUMBER_ADULTS_${room}`,
-      selectValue, 
-      room
+      type: `NUMBER_CHILDREN_${room}`,
+      selectValue
     }
   } 

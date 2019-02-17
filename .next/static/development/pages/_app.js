@@ -8134,23 +8134,23 @@ module.exports = __webpack_require__(/*! ./dist/client/router */ "./node_modules
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_01ce18af005e042d77da ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_01ce18af005e042d77da ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -8779,12 +8779,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_01ce18af005e042d77da ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -10608,12 +10608,12 @@ module.exports = hoistNonReactStatics;
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_01ce18af005e042d77da ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -12923,12 +12923,12 @@ module.exports = {
 
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!******************************************************************************************************!*\
-  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_088ad163e0fe8b57417b ***!
+  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_01ce18af005e042d77da ***!
   \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_088ad163e0fe8b57417b */ "dll-reference dll_088ad163e0fe8b57417b"))("./node_modules/webpack/buildin/global.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01ce18af005e042d77da */ "dll-reference dll_01ce18af005e042d77da"))("./node_modules/webpack/buildin/global.js");
 
 /***/ }),
 
@@ -13197,14 +13197,12 @@ function occupancyOfRoom() {
       case "NUMBER_ADULTS_".concat(room):
         console.warn('adultsreducer');
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          adults: action.selectValue,
-          room: action.room
+          adults: action.selectValue
         });
 
       case "NUMBER_CHILDREN_".concat(room):
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          children: action.selectValue,
-          room: action.room
+          children: action.selectValue
         });
 
       default:
@@ -13239,14 +13237,14 @@ function initializeStore(initialState) {
 
 /***/ }),
 
-/***/ "dll-reference dll_088ad163e0fe8b57417b":
+/***/ "dll-reference dll_01ce18af005e042d77da":
 /*!*******************************************!*\
-  !*** external "dll_088ad163e0fe8b57417b" ***!
+  !*** external "dll_01ce18af005e042d77da" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_088ad163e0fe8b57417b;
+module.exports = dll_01ce18af005e042d77da;
 
 /***/ })
 

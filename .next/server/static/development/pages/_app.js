@@ -1905,14 +1905,12 @@ function occupancyOfRoom() {
       case "NUMBER_ADULTS_".concat(room):
         console.warn('adultsreducer');
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          adults: action.selectValue,
-          room: action.room
+          adults: action.selectValue
         });
 
       case "NUMBER_CHILDREN_".concat(room):
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          children: action.selectValue,
-          room: action.room
+          children: action.selectValue
         });
 
       default:
