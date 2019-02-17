@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import check from './check'
-import occupancy from './occupancy'
+import occupancyOfRoom from './occupancy'
 
 const appReducer = combineReducers({
   check,
-  occupancy
+  room1: occupancyOfRoom(1),
+  room2: occupancyOfRoom(2),
+  room3: occupancyOfRoom(3),
+  room4: occupancyOfRoom(4)
 
 })
 

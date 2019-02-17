@@ -3,24 +3,27 @@ const initialState = {
     children: 0
 
   }
- export const occupancy = (state = initialState, action) => {
-      switch (action.type){
-            case 'NUMBER_ADULTS':
-            console.warn("action done")
+function occupancyOfRoom(room = ''){
+     return function occupancy(state = initialState, action) {
+        switch (action.type){
+            case `NUMBER_ADULTS_${room}`:
+                console.warn('adultsreducer')
                 return {
                     ...state,
                     adults: action.selectValue,
+                    room: action.room
                 }
-            case 'NUMBER_CHILDREN':
-            console.warn("action done")
+            case `NUMBER_CHILDREN_${room}`:
                 return {
                     ...state,
                     children: action.selectValue,
+                    room: action.room
                 }                
             
           default:
               return state
-      }
+     }
+    }
   }
 
-  export default occupancy
+  export default occupancyOfRoom

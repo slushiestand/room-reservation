@@ -9,6 +9,7 @@ export default class SelectBox extends Component {
         this.setState({
             selectValue: e.target.value
         })
+        this.props.onChange(this.state.selectValue)
 
 
     }
@@ -19,9 +20,9 @@ export default class SelectBox extends Component {
               onChange={this.handleChange} 
               disabled={this.props.checked == false}
               >
-                <option value="0">0</option>
-                <option value="1">1</option>
-                {this.props.children === true ? <option value="2">2</option> : null}
+                <option value={0}>0</option>
+                <option value={1}>1</option>
+                {this.props.children === true ? <option value={2}>2</option> : null}
               </select>
       );
     }

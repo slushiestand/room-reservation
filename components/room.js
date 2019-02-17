@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import SelectBox from './selectBox'
 import CheckBox from './checkBox'
-import StyledBox from './styledBox'
+import { adults, children } from '../actions'
 
 
 
@@ -74,7 +75,18 @@ const Container = styled.div`
     list-style-type: none;
   `;
 
-  export default class Room extends Component {
+  class Room extends Component {
+    handleChangeAdult = (selectValue) => {
+      const room = this.props.room
+      console.warn(selectValue, room)
+      this.props.adultsInRoom(selectValue, room)
+    }
+
+    handleChangeChildren = (selectValue) => {
+      const room = this.props.room
+      console.warn(selectValue, room)
+      this.props.childrenInRoom(selectValue, room)
+    }
 
     render() {
 
@@ -85,7 +97,7 @@ const Container = styled.div`
               checked={this.props.checked} 
               handleChange={this.props.handleClick}
             />
-            <Title>  {this.props.room} </Title>
+            <Title>  Room {this.props.room} </Title>
             </TitleContainer>
             <RoomsContainer checked={this.props.checked}>
               <AdultsSection checked={this.props.checked}>
@@ -97,7 +109,7 @@ const Container = styled.div`
                   (18+)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked} />
+                <SelectBox checked={this.props.checked} onChange={this.handleChangeAdult}/>
               </AdultsSection>
               
               <ChildrenSection checked={this.props.checked}>
@@ -109,7 +121,7 @@ const Container = styled.div`
                     (0-17)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox checked={this.props.checked} children={true}/>
+                <SelectBox checked={this.props.checked} onChange={this.handleChangeChildren} children={true}/>
               </ChildrenSection>
             </RoomsContainer>
   
@@ -119,3 +131,13 @@ const Container = styled.div`
     }
   }
 
+  
+  const mapDispatchToProps = (dispatch) => ({
+    adultsInRoom: (selectValue, room) => {dispatch(adults(selectValue, room))},
+    childrenInRoom: (selectValue, room) => {dispatch(children(selectValue, room))},
+
+  })
+  
+  export default connect(
+    null, mapDispatchToProps
+  )(Room)

@@ -28,16 +28,18 @@ export function check2() {
     }
   } 
 
-  export function adults(selectValue) {
+  export function adults(selectValue, room) {
     return {
-      type: "NUMBER_ADULTS",
-      selectValue
+      type: `NUMBER_ADULTS_${room}`,
+      selectValue, 
+      room
     }
   } 
 
-  export function children(selectValue) {
+  export function children(selectValue, room) {
     return {
-      type: "NUMBER_CHILDREN",
-      selectValue
+      type: `NUMBER_ADULTS_${room}`,
+      selectValue, 
+      room
     }
   } 

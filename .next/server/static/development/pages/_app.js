@@ -1811,7 +1811,6 @@ var check = function check() {
 
   switch (action.type) {
     case 'CHECK_BOX2':
-      console.warn("action done");
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         check2: !state.check2
       });
@@ -1869,7 +1868,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var appReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   check: _check__WEBPACK_IMPORTED_MODULE_1__["default"],
-  occupancy: _occupancy__WEBPACK_IMPORTED_MODULE_2__["default"]
+  room1: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(1),
+  room2: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(2),
+  room3: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(3),
+  room4: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(4)
 });
 var rootReducer = function rootReducer(state, action) {
   return appReducer(state, action);
@@ -1881,40 +1883,45 @@ var rootReducer = function rootReducer(state, action) {
 /*!*******************************!*\
   !*** ./reducers/occupancy.js ***!
   \*******************************/
-/*! exports provided: occupancy, default */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "occupancy", function() { return occupancy; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 var initialState = {
   adults: 0,
   children: 0
 };
-var occupancy = function occupancy() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-  var action = arguments.length > 1 ? arguments[1] : undefined;
 
-  switch (action.type) {
-    case 'NUMBER_ADULTS':
-      console.warn("action done");
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-        adults: action.selectValue
-      });
+function occupancyOfRoom() {
+  var room = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  return function occupancy() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments.length > 1 ? arguments[1] : undefined;
 
-    case 'NUMBER_CHILDREN':
-      console.warn("action done");
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-        children: action.selectValue
-      });
+    switch (action.type) {
+      case "NUMBER_ADULTS_".concat(room):
+        console.warn('adultsreducer');
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          adults: action.selectValue,
+          room: action.room
+        });
 
-    default:
-      return state;
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (occupancy);
+      case "NUMBER_CHILDREN_".concat(room):
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          children: action.selectValue,
+          room: action.room
+        });
+
+      default:
+        return state;
+    }
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (occupancyOfRoom);
 
 /***/ }),
 

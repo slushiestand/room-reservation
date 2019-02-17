@@ -52,21 +52,21 @@ render() {
     <div>
     <PageContainer>
       <RoomContainer>
-        <Room1 room={'Room 1'}/>
+        <Room1 room={1}/>
         <Room 
-          room={'Room 2'} 
+          room={2} 
           handleClick={this.handleClickBox2} 
           checked={theState.check2}
 
         />
         <Room 
-          room={'Room 3'} 
+          room={3} 
           handleClick={this.handleClickBox3} 
           checked={theState.check3}
   
         />
         <Room 
-          room={'Room 4'} 
+          room={4} 
           handleClick={this.props.checkBox4} 
           checked={theState.check4}
 

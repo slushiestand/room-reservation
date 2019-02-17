@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import SelectBox from './selectBox'
+import { adults, children } from '../actions'
 
 const Container = styled.div`
   display: flex;
@@ -70,13 +72,23 @@ const Container = styled.div`
     list-style-type: none;
   `;
 
-  export default class Room1 extends Component {
+  class Room1 extends Component {
+    handleChangeAdult = (selectValue) => {
+      const room = this.props.room
+      console.warn(selectValue, room)
+      this.props.adultsInRoom(selectValue, room)
+    }
 
+    handleChangeChildren = (selectValue) => {
+      const room = this.props.room
+      console.warn(selectValue, room)
+      this.props.childrenInRoom(selectValue, room)
+    }
     render() {
       return (
           <Container >
             <TitleContainer>
-              <Title> {this.props.room} </Title>
+              <Title> Room {this.props.room} </Title>
             </TitleContainer>
             <RoomsContainer>
               <AdultsSection>
@@ -88,7 +100,7 @@ const Container = styled.div`
                   (18+)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox />
+                <SelectBox onChange={this.handleChangeAdult}/>
               </AdultsSection>
               
               <ChildrenSection>
@@ -100,7 +112,7 @@ const Container = styled.div`
                     (0-17)
                   </ListItem>
                 </UnorderedList>
-                <SelectBox children={true}/>
+                <SelectBox onChange={this.handleChangeChildren} children={true}/>
               </ChildrenSection>
             </RoomsContainer>
   
@@ -109,3 +121,15 @@ const Container = styled.div`
       );
     }
   }
+
+    
+  const mapDispatchToProps = (dispatch) => ({
+    adultsInRoom: (selectValue, room) => {dispatch(adults(selectValue, room))},
+    childrenInRoom: (selectValue, room) => {dispatch(children(selectValue, room))},
+
+  })
+  
+  //set initial state of app by pull from reducer like suggested here: https://stackoverflow.com/questions/52479422/keep-redux-form-values-after-page-reload-without-submit-form
+  export default connect(
+    null, mapDispatchToProps
+  )(Room1)
