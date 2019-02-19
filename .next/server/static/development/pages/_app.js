@@ -1761,20 +1761,20 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_6__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 13
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_9__["Provider"], {
         store: reduxStore,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 14
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 15
         },
         __self: this
       }))));
@@ -1863,6 +1863,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _check__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check */ "./reducers/check.js");
 /* harmony import */ var _occupancy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./occupancy */ "./reducers/occupancy.js");
+/* harmony import */ var _submit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./submit */ "./reducers/submit.js");
+
 
 
 
@@ -1871,7 +1873,8 @@ var appReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   room1: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(1),
   room2: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(2),
   room3: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(3),
-  room4: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(4)
+  room4: Object(_occupancy__WEBPACK_IMPORTED_MODULE_2__["default"])(4),
+  submit: _submit__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 var rootReducer = function rootReducer(state, action) {
   return appReducer(state, action);
@@ -1903,7 +1906,6 @@ function occupancyOfRoom() {
 
     switch (action.type) {
       case "NUMBER_ADULTS_".concat(room):
-        console.warn('adultsreducer');
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           adults: action.selectValue
         });
@@ -1920,6 +1922,36 @@ function occupancyOfRoom() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (occupancyOfRoom);
+
+/***/ }),
+
+/***/ "./reducers/submit.js":
+/*!****************************!*\
+  !*** ./reducers/submit.js ***!
+  \****************************/
+/*! exports provided: submit, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "submit", function() { return submit; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+
+var submit = function submit() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'SUBMIT':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        theState: action.theState
+      });
+
+    default:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (submit);
 
 /***/ }),
 

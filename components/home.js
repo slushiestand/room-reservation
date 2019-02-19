@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Room1 from './room1'
 import Room from './room'
-import { check2, check3, check4, uncheck, uncheck4, adults, children } from '../actions'
+import { check2, check3, check4, uncheck, uncheck4, submit } from '../actions'
 
 const PageContainer = styled.form`
   display: flex;
@@ -43,11 +43,13 @@ class Home extends Component {
   }
 
 
-  handleSubmit = (selectValue) => {
-
+  handleSubmit = (e) => {
+    e.preventDefault(),
+    this.props.submitForm(this.props.theState)
   }
+
 render() {
-  const theState = this.props.theState
+  const theState = this.props.theState.check
   return (
     <div>
     <PageContainer>
@@ -83,7 +85,7 @@ render() {
 }
 
 const mapStateToProps = (state) => ({
-  theState : state.check
+  theState : state
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -92,6 +94,7 @@ const mapDispatchToProps = (dispatch) => ({
   checkBox2: () => {dispatch(check2())},
   checkBox3: () => {dispatch(check3())},
   checkBox4: () => {dispatch(check4())},
+  submitForm: (theState) => {dispatch(submit(theState))}
 
 })
 

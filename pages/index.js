@@ -4,9 +4,6 @@ import Home from '../components/home'
 
 class Index extends Component {
 
-  componentDidMount () {
-  }
-
 
   render () {
     return <Home />

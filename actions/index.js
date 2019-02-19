@@ -40,4 +40,11 @@ export function check2() {
       type: `NUMBER_CHILDREN_${room}`,
       selectValue
     }
-  } 
+  }
+  
+  export function submit(theState) {
+    return {
+      type: "SUBMIT", 
+      theState
+    }
+  }

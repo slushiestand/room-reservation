@@ -7,7 +7,6 @@ function occupancyOfRoom(room = ''){
      return function occupancy(state = initialState, action) {
         switch (action.type){
             case `NUMBER_ADULTS_${room}`:
-                console.warn('adultsreducer')
                 return {
                     ...state,
                     adults: action.selectValue

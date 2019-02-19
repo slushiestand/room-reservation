@@ -4,7 +4,7 @@
 /*!**************************!*\
   !*** ./actions/index.js ***!
   \**************************/
-/*! exports provided: check2, check3, check4, uncheck, uncheck4, adults, children */
+/*! exports provided: check2, check3, check4, uncheck, uncheck4, adults, children, submit */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16,6 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uncheck4", function() { return uncheck4; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adults", function() { return adults; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "children", function() { return children; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "submit", function() { return submit; });
 function check2() {
   return {
     type: "CHECK_BOX2"
@@ -51,6 +52,12 @@ function children(selectValue, room) {
   return {
     type: "NUMBER_CHILDREN_".concat(room),
     selectValue: selectValue
+  };
+}
+function submit(theState) {
+  return {
+    type: "SUBMIT",
+    theState: theState
   };
 }
 
@@ -178,7 +185,9 @@ function (_Component) {
       } else _this.props.checkBox3();
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleSubmit", function (selectValue) {});
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this)), "handleSubmit", function (e) {
+      e.preventDefault(), _this.props.submitForm(_this.props.theState);
+    });
 
     return _this;
   }
@@ -186,30 +195,30 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
     key: "render",
     value: function render() {
-      var theState = this.props.theState;
+      var theState = this.props.theState.check;
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 54
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(PageContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 55
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(RoomContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 56
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room1__WEBPACK_IMPORTED_MODULE_10__["default"], {
         room: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 57
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -218,7 +227,7 @@ function (_Component) {
         checked: theState.check2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -227,7 +236,7 @@ function (_Component) {
         checked: theState.check3,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 64
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_room__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -236,14 +245,14 @@ function (_Component) {
         checked: theState.check4,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 70
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Submit, {
         onClick: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 77
         },
         __self: this
       }, " Submit ")));
@@ -255,7 +264,7 @@ function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    theState: state.check
+    theState: state
   };
 };
 
@@ -275,6 +284,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     checkBox4: function checkBox4() {
       dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["check4"])());
+    },
+    submitForm: function submitForm(theState) {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_12__["submit"])(theState));
     }
   };
 }; //set initial state of app by pull from reducer like suggested here: https://stackoverflow.com/questions/52479422/keep-redux-form-values-after-page-reload-without-submit-form
@@ -9478,15 +9490,12 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_home__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 9
         },
         __self: this
       });
